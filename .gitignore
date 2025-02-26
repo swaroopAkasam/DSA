@@ -1,1 +1,8 @@
+# Ignore everything
+*
+
+# Un-ignore all folders
+!*/
+
+# Un-ignore all .cpp files
 !*.cpp
