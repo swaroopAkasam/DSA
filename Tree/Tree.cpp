@@ -91,13 +91,14 @@ void buildTreeFromLevelOrder(Node*& root) {
 
 
 int main() {
-    Node* root = nullptr;
-    
-    // Build the tree using level order input
-    buildTreeFromLevelOrder(root);
-    
-    cout << "Level Order Traversal:" << endl;
+    Node* root = buildTree();
     levelOrderTraversal(root);
+    
+    // // Build the tree using level order input
+    // buildTreeFromLevelOrder(root);
+    
+    // cout << "Level Order Traversal:" << endl;
+    // levelOrderTraversal(root);
     
     return 0;
 }
