@@ -24,6 +24,8 @@ int findLargestSubtreeSumRecursion(Node* root, int& sum) {
     return curr_sum;
 }
 int findLargestSubtreeSumBFS(Node* root) {
+    // The idea is to use breadth first search to store nodes (level wise) at each level in some container and then traverse these levels in reverse order from bottom level to top level and keep storing the subtree sum value rooted at nodes at each level. 
+    // We can then reuse these values for upper levels. Subtree sum rooted at node = value of node + (subtree sum rooted at node->left) + (subtree sum rooted at node->right)
     if(!root) return 0;
     int ans = INT_MIN;
     queue<Node*> q;
