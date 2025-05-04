@@ -1,5 +1,3 @@
-// g++ -o DSA-Leetcode/containsDuplicates DSA-Leetcode/containsDuplicates.cpp
-// ./DSA-Leetcode/containsDuplicates
 
 #include<bits/stdc++.h>
 using namespace std;
