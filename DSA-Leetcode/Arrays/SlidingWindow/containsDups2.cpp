@@ -37,7 +37,7 @@ int main() {
     Solution sol;
     vector<int>nums = {1,2,3,1,2,3};
     int k = 2;
-    bool ans = sol.containsNearbyDuplicate(nums);
+    bool ans = sol.containsNearbyDuplicate(nums, k);
     cout << ans << endl;
     return 0;
 }

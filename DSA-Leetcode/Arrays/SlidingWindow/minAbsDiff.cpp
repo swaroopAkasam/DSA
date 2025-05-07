@@ -43,7 +43,6 @@ public:
 int main() {
     Solution sol;
     vector<int>nums = {3,8,-10,23,19,-4,-14,27};
-    int k = 2;
     bool ans = sol.minimumAbsDifference(nums);
     cout << ans << endl;
     return 0;
