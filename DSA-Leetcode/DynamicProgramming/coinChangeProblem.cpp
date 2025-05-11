@@ -52,7 +52,7 @@ public:
 };
 int main() {
     Solution sol;
-    itn n = 4;
+    int n = 4;
     vector<int> dp(n+1, -1);
     int ans = sol.climbStairsMem(n, dp);
     cout << ans << endl;
