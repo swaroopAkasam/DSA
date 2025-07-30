@@ -1,5 +1,5 @@
-// g++ -o Graph Graph.cpp
-// ./Graph
+// g++ -o graph_represent graph_represent.cpp
+// ./graph_represent
 
 #include <bits/stdc++.h>
 using namespace std;
