@@ -27,6 +27,36 @@ public:
     TreeNode* sortedArrayToBST(vector<int>& nums) {
         return helper(nums, 0, nums.size()-1);
     }
+
+    TreeNode* sortedArrayToBSTiterative(vector<int>& nums) {
+        struct NodeInfo {
+            TreeNode* node;
+            int left; int right;
+        };
+        queue<NodeInfo> q;
+        int n = nums.size();
+        int mid = n/2;
+        TreeNode* root = new TreeNode(nums[mid]);
+        q.push({root, 0, mid-1});
+        q.push({root, mid+1, n-1});
+        while(!q.empty()) {
+            NodeInfo curr = q.front();
+            q.pop();
+            if (curr.left<=curr.right) {
+                mid = curr.left + (curr.right-curr.left)/2;
+                TreeNode* child = new TreeNode(nums[mid]);
+                if(nums[mid]<curr.node->val) {
+                    curr.node->left = child;
+                }
+                else {
+                    curr.node->right = child;
+                }
+                q.push({child, curr.left, mid-1});
+                q.push({child, mid+1, curr.right});
+            }
+        }
+        return root;
+    }
 };
 
 int main()
@@ -36,3 +66,4 @@ int main()
     sol.sortedArrayToBST(v);
     return 0;
 }
+
