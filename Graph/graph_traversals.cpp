@@ -18,15 +18,15 @@ public:
         }
         cout << endl;
     }
-    vector<int> bfsTraversal() {
+    vector<int> bfsTraversal(int start) {
         /*
         T.C: O(V) + O(2*E) ~ O(V+E) i.e O(V) the queue will run for V vertices, O(2*E) inside queue it will run 2*E time which is the degree of the graph.
         */
         vector<int> bfs;
         queue<int> q;
         vector<int> visited(adj.size(), 0);
-        q.push(0);
-        visited[0] = 1;
+        q.push(start);
+        visited[start] = 1;
         while(!q.empty()) {
             int node = q.front();
             q.pop();    
@@ -41,6 +41,16 @@ public:
         }
         return bfs;
     }
+
+    void dfsTraversal(int node, vector<int>& visited, vector<int>& dfs) {
+        visited[node] = 1;
+        dfs.push_back(node);
+        for(auto ele: adj[node]) {
+            if(!visited[ele]) {
+                dfsTraversal(ele, visited, dfs);
+            }
+        }
+    }
 };
 
 int main() {
@@ -54,8 +64,18 @@ int main() {
     GraphTrav g(adj);
     g.displayAdjList();
     cout << endl;
-    vector<int> bfs = g.bfsTraversal();
+
+    // BFS Traversal
+    vector<int> bfs = g.bfsTraversal(2);
     for(auto ele: bfs) cout << ele << " ";
     cout << endl;
+
+    // DFS Traversal
+    vector<int> dfs;
+    vector<int> visited(V, 0);
+    g.dfsTraversal(0, visited, dfs);
+    for(auto ele: dfs) cout << ele << " ";
+    cout << endl;
+
     return 0;
 }
