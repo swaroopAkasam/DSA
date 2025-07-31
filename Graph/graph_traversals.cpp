@@ -21,6 +21,11 @@ public:
     vector<int> bfsTraversal(int start) {
         /*
         T.C: O(V) + O(2*E) ~ O(V+E) i.e O(V) the queue will run for V vertices, O(2*E) inside queue it will run 2*E time which is the degree of the graph.
+        S.C: O(V)
+            visited[] array → O(V)
+            queue for BFS → at most O(V) in worst case
+            bfs[] result array → O(V)
+            Total auxiliary space = O(V)
         */
         vector<int> bfs;
         queue<int> q;
@@ -43,6 +48,13 @@ public:
     }
 
     void dfsTraversal(int node, vector<int>& visited, vector<int>& dfs) {
+        /*
+        T.C: O(V + E)
+        S.C: O(V)
+            visited[] array → O(V)
+            Call stack (recursive DFS) worst-case O(V)
+            So total auxiliary space = O(V)
+        */
         visited[node] = 1;
         dfs.push_back(node);
         for(auto ele: adj[node]) {
