@@ -139,6 +139,7 @@ int main() {
     return 0;
 }
 
+/*
 Time Complexity (TC): O(m × n)
 Key operations:
     DFS traversal:
@@ -158,3 +159,4 @@ Components:
     So recursion stack = O(m × n) in the worst case.
     Directions vector: constant size (4 entries) → O(1).
     O(m × n) (visited) + O(m × n) (recursion stack)
+*/

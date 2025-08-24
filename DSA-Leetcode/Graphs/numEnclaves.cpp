@@ -151,3 +151,28 @@ int main() {
 
     return 0;
 }
+
+Time Complexity (TC)
+    DFS traversal: Each cell is visited at most once → O(m × n).
+    Boundary scanning: O(m + n).
+    Final counting loop: O(m × n).
+    Total: O(m × n)
+
+Space Complexity (SC)
+    vis matrix → O(m × n).
+    DFS recursion stack → worst case O(m × n) (if the whole grid is land).
+    Total: O(m × n)
+
+/*
+BFS Solution Complexity
+Time Complexity
+    We scan the entire grid once to push boundary land cells into the queue → O(n * m).
+    BFS traversal visits each cell at most once → O(n * m).
+    Each BFS step checks 4 directions → constant work (O(1)).
+    Total = O(n * m)
+
+Space Complexity
+    Visited matrix / modification in-place → O(n * m)
+    Queue can store at most all land cells in the worst case → O(n * m)
+    Total = O(n * m)
+*/
