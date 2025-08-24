@@ -5,8 +5,6 @@ Given an m x n binary matrix mat, return the distance of the nearest 0 for each 
 The distance between two cells sharing a common edge is 1.
 
 Note: This question is the same as 1765: https://leetcode.com/problems/map-of-highest-peak/
-
-
 */
 
 #include <bits/stdc++.h>
@@ -153,3 +151,10 @@ int main() {
 
     return 0;
 }
+
+
+
+T.C: 
+Average case: O(m*n) with pruning, but could be worse in dense cases.
+S.C: 
+O(m*n) for recursion stack (in worst case) + distance matrix.
