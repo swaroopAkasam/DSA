@@ -46,7 +46,7 @@ class Solution2 {
         int first = INT_MIN, sec = INT_MIN, third = INT_MIN;
         for(auto ele: arr) {
             if(ele > first) {
-                third = sec;
+                third = sec;{}
                 sec = first;
                 first = ele;
             }
@@ -62,6 +62,31 @@ class Solution2 {
     }
 };
 
+// We want the third distinct maximum in the array. Leetcode 414. Third Maximum Number
+class Solution3 {
+public:
+    int thirdDistinctMax(vector<int>& arr) {
+        int n = arr.size();
+        long first = LONG_MIN, sec = LONG_MIN, third = LONG_MIN;
+        for(auto ele: arr) {
+            if(ele==first || ele==sec || ele==third) continue;
+            if(ele > first) {
+                third = sec;{}
+                sec = first;
+                first = ele;
+            }
+            else if(ele > sec) {
+                third = sec;
+                sec = ele;
+            }   
+            else if(ele > third) {
+                third = ele;
+            }
+        }
+        return (third == LONG_MIN) ? (int)first : (int)third;
+    
+    }
+};
 
 int main() {
     Solution2 sol;
