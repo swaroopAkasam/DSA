@@ -8,6 +8,10 @@ Note: The second largest element should not be equal to the largest element.
 #include<bits/stdc++.h>
 using namespace std;
 
+// Brute force approach would be sorting
+
+// Two Pass Search
+// The approach is to traverse the array twice. In the first traversal, find the maximum element. In the second traversal, find the maximum element ignoring the one we found in the first traversal.
 class Solution {
   public:
     int getSecondLargest(vector<int> &arr) {
@@ -25,6 +29,13 @@ class Solution {
 };
 
 
+// One Pass Search
+/*
+The idea is to keep track of the largest and second largest element while traversing the array. Initialize largest and secondLargest with -1. Now, for any index i,
+
+If arr[i] > largest, update secondLargest with largest and largest with arr[i].
+Else If arr[i] < largest and arr[i] > secondLargest, update secondLargest with arr[i]. 
+*/
 class Solution2 {
   public:
     int getSecondLargest(vector<int> &arr) {
