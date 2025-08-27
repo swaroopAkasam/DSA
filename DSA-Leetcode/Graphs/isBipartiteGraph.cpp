@@ -47,6 +47,31 @@ public:
     }
 };
 
+class Solution {
+public:
+    bool checkBip(int i, vector<vector<int>>& graph, vector<int>& color) {
+        for(const int neigh: graph[i]) {
+            if(color[neigh]==-1) {
+                color[neigh] = !color[i];
+                if(!checkBip(neigh, graph, color)) return false;
+            }
+            else if(color[neigh]==color[i]) return false;
+        }
+        return true;
+    }
+    bool isBipartite(vector<vector<int>>& graph) {
+        int n = graph.size();
+        vector<int> color(n, -1);
+        for(int i=0; i<n; i++) {
+            if(color[i]==-1) {
+                color[i] = 0;
+                if(!checkBip(i, graph, color)) return false;
+            }
+        }
+        return true;
+    }
+};
+
 int main() {
     Solution sol;
 
