@@ -26,8 +26,7 @@ Difficulty: Easy/Medium
 #include <bits/stdc++.h>
 using namespace std;
 
-#include <bits/stdc++.h>
-using namespace std;
+
 
 // Leetcode 
 class Solution {
