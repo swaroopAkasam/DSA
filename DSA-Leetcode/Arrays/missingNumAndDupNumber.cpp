@@ -91,7 +91,7 @@ class Solution {
         // Sum of first n natural numbers
         long long  s = (n * (n + 1)) / 2;
         // Sum of squares of first n natural numbers
-        int ssq = (n * (n + 1) * (2 * n + 1)) / 6;
+        long long ssq = (n * (n + 1) * (2 * n + 1)) / 6;
 
         // Subtract actual values from expected sums
         for (int i = 0; i < n; i++) {
