@@ -22,12 +22,42 @@ public:
         }
         return profit;
     }
+
+    int maxProfitLocMinimaMaxima(vector<int>& prices) {
+        int n = prices.size();
+        
+        // Local Minima
+        int lMin = prices[0]; 
+        
+        // Local Maxima
+        int lMax = prices[0];  
+        int res = 0;
+    
+        int i = 0;
+        while (i < n - 1) {
+        
+            // Find local minima 
+            while (i < n - 1 && prices[i] >= prices[i + 1]) { i++; }
+            lMin = prices[i];
+        
+            // Local Maxima
+            while (i < n - 1 && prices[i] <= prices[i + 1]) { i++; }
+            lMax = prices[i];
+        
+            // Add current profit 
+            res = res + (lMax - lMin);
+    }
+  
+    return res;
+}
 };
+
+
 int main() {
     Solution sol;
 
     // Example test case
-    vector<int> prices = {7,1,5,3,6,4};
+    vector<int> prices = {1, 2, 3};
     cout << "Prices: ";
     for (int p : prices) cout << p << " ";
     cout << "\n";
