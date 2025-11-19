@@ -108,7 +108,7 @@ void setZeroesOptimal(vector<vector<int>>& matrix, int n, int m) {
     for(int i=1; i<n; i++) {
         for(int j=1; j<m; j++) {
             if(matrix[i][j]!=0) {
-                if(matrix[i][0] || matrix[0][j]) {
+                if(matrix[i][0]==0 || matrix[0][j]==0) {
                     matrix[i][j] = 0;
                 }
             }
