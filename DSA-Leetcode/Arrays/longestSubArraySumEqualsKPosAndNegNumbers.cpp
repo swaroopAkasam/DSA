@@ -42,7 +42,7 @@ int main() {
         {{-2, -1, 2, 1}, 1},         // expected 2 ([-1, 2])
         {{1, 2, 3}, 10},             // expected 0 (no subarray)
         {{0, 0, 0, 0}, 0},           // expected 4 (whole array sums to 0)
-        {{3}, 3}                     // expected 1 (single element equals k)
+        {{2, 3}, 3}                     // expected 1 (single element equals k)
     };
 
     for (int i = 0; i < tests.size(); i++) {
